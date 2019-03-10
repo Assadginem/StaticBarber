@@ -9,8 +9,11 @@
   <link rel="stylesheet" href="styles/bootstrap-4.3.1-dist/css/bootstrap.css">
   <link rel="stylesheet" href="styles/bootstrap-4.3.1-dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 
-  
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -47,36 +50,102 @@
       <!----End of Top Nav Bar-->
 
       <nav class="main-nav">
+        <div class="menu-icon">
+                        Menu  <i class="fa fa-bars fa-2x"></i>
+          </div>
          <div class="container">
             <div class="row">
               <div class="navbar-header">
                 <i class="logo fas fa-cut"><a href="#"> Barber Lounge</a></i>
               </div>
                 <ul class="main-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <a class="btn appointment btn--rounded mr-10" href="#">Book Now</a>
+                    <li class="links"><a href="#">Home</a></li>
+                    <li class="links"><a href="#">Services</a></li>
+                    <li class="links"><a href="#">About Us</a></li>
+                      <a class="btn appointment btn--rounded mr-10" href="#">Book Now</a>
                 </ul>
             </div>
          </div>
       </nav>
-    
+
       <div class="hero-main">
-        <div class="container">
-          <div class="row">
-             <div class="col-xs-12 col-sm-12 col-md-12 text--center hero-text ">
-                <h1>We offer amazing haircut styles</h1>
-              <p>Our highly trained stylists take pride in providing the<br> attention-to-detail, style, and look you’re after.</p>
-             </div>
-             <div class="hero-button col-xs-12 col-sm-12 col-md-12 text--center btn">
-                    <a class="btn btn--secondary btn--rounded mr-10" href="#">Read More </a>
-                    <a class="btn btn--white btn--bordered btn--rounded" href="#">Get Started</a>
-             </div>
-          </div>
+        <div class="img-title hero-item">
+          <h1>We offer amazing haircut styles</h1>
+        </div>
+        <div class="img-footer hero-item">
+          <p>Our highly trained stylists take pride in providing the<br> attention-to-detail, style, and look you’re after.</p>
+        </div>
+        <div class="img-button1 hero-item">
+          <a class="btn btn--secondary btn--rounded mr-10" href="#">Book us</a>
+        </div>
+        <div class="img-button2 hero-item">
+          <a class="btn btn--white btn--bordered btn--rounded" href="#">View Styles</a>
         </div>
       </div>
 
   </header>
+  <div class="content">
+    <p>
+      Thousands of people have once again hit the streets of Venezuela's capital, Caracas, in the latest rival displays for and against President Nicolas Maduro amid a deepening political crisis.
+
+As a major blackout continued affecting much of the country for a third day, anti-government protesters on Saturday heeded the call of the Washington-backed opposition leader Juan Guaido for renewed rallies demanding Maduro step down.
+
+Opposition supporters on Victoria avenue, in western Caracas, pushed against the shields of riot police, who eventually withdrew but maintained a large presence in the area.
+
+"I am tired [of this situation]," Rosa Soriano, an opposition demonstrator, told Al Jazeera. "We can't continue like this; I lost hope before, but now I believe a change is possible."
+
+Conversely, red-shirted Maduro supporters turned out for a rival rally near the Miraflores presidential pa
+    </p>
+  </div>
+  <script type="text/javascript">
+  // Scrolling Effect
+  $(document).ready(function() {
+
+    // Menu-toggle button
+
+        $(document).ready(function() {
+              $(".menu-icon").on("click", function() {
+                    $("nav ul").toggleClass("showing");
+                    $('nav').toggleClass("sticky2");
+
+
+              });
+        });
+  			// grab the initial top offset of the navigation
+  		   	var stickyNavTop = $('nav').offset().top;
+
+
+  		   	// our function that decides weather the navigation bar should have "fixed" css position or not.
+  		   	var stickyNav = function(){
+  			    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+  			    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+  			    // otherwise change it back to relative
+  			    if (scrollTop > stickyNavTop) {
+  			        $('nav').addClass('sticky')
+                $('nav').addClass('black');
+                $(".main-nav li a").css('color', 'black');
+                $(".navbar-header i").css('color', 'black');
+                $(".navbar-header i a").css('color', 'black');
+
+
+  			    } else {
+              $('nav').removeClass('black');
+  			        $('nav').removeClass('sticky');
+                $(".main-nav li a").css('color', 'white');
+                $(".navbar-header i").css('color', 'white');
+                $(".navbar-header i a").css('color', 'white');
+
+  			    }
+  			};
+
+  			stickyNav();
+  			// and run it again every time you scroll
+  			$(window).scroll(function() {
+  				stickyNav()
+  			});
+  		});
+  </script>
+
 </body>
 </html>

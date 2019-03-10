@@ -32,11 +32,11 @@ header {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 100vh;
 }
 /* Top Bar */
 .top-bar {
-  height: 50px;
+  height: 60px;
   background-color: transparent;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -54,7 +54,7 @@ header {
 }
 .top-bar .top--contact {
   font-family: 'Open Sans', sans-serif;
-  line-height: 50px;
+  line-height: 60px;
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
@@ -67,7 +67,7 @@ header {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 60px;
   padding-right: 20px;
 }
 .top-bar .top--login i {
@@ -92,7 +92,7 @@ header {
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 60px;
 }
 .top-bar .top--social a:hover {
   color: #ffffff;
@@ -101,6 +101,32 @@ header {
 /**********************
 *       Navbar        *
 ***********************/
+nav {
+  position: -webkit-sticky;
+
+}
+
+
+.sticky2 {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+  background: #000;
+}
+
+nav ul {
+  line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
 .navbar-header {
   float: none !important;
   margin-right: auto;
@@ -119,7 +145,7 @@ header {
 
 .main-nav {
     margin:0;
-    list-style: none; 
+    list-style: none;
 }
 
 .main-nav li {
@@ -128,7 +154,7 @@ header {
 }
 
 .main-nav li a {
-    color: #ffffff;
+    color: #000;
     text-decoration: none;
     font-size: 90%;
 
@@ -149,18 +175,46 @@ header {
 }
 
 .hero-main{
-  position: relative;
-  top: 25%
-}
-.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 28%;
   font-family: 'Playfair Display', serif;  color:#ffffff;
   text-align: center;
   word-spacing: 2px;
-  line-height: 150%
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.hero-text h1{
-  font-weight: bold;
+.hero-item {
+  text-align: center;
 }
+.img-title {
+  grid-column: 1 /7;
+}
+.img-footer {
+  grid-column: 1 /7;
+}
+.img-button1{
+  grid-column: 1 / 4;
+  text-align: right;
+}
+.img-button2{
+  text-align: left;
+  grid-column: 4 / 7;
+}
+
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
 
 
 /*------------------------------------*\
@@ -219,8 +273,61 @@ header {
   margin-right:10px;
 }
 
+/**Content**/
+.content {
+    width: 94%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+
+nav.black {
+    background: #000;
+    color:white !important;
+}
+
+
+
+
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .text-center-xs {
-    text-align: center !important;
+
+  nav ul {
+        max-height: 0px;
+        background: #000;
   }
+ 
+
+  nav.black ul {
+        background: #000;
+  }
+
+  .showing {
+        max-height: 34em;
+  }
+
+  nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+  }
+
+  .menu-icon {
+        display: block;
+  }
+  .bookbtn a {
+    position: relative;
+    right:77px;
+  }
+  .hero-main{
+    position: absolute;
+    top:40%;
+    font-family: 'Playfair Display', serif;  color:#ffffff;
+    text-align: center;
+    word-spacing: 2px;
+
+  }
+
 }
